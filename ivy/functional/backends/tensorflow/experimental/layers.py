@@ -448,11 +448,12 @@ def interpolate(
             dims = 2
             remove_dim = True
         mode = "bilinear" if mode == "linear" else "area" if mode == "tf_area" else mode
-    if mode=="bicubic_tensorflow":
+    if mode == "bicubic_tensorflow":
         mode = "bicubic"
         x = tf.transpose(x, (0, 2, 3, 1))
-        return tf.transpose(tf.image.resize(x, size, method=mode, antialias=False),
-                            (0, 3, 1, 2))
+        return tf.transpose(
+            tf.image.resize(x, size, method=mode, antialias=False), (0, 3, 1, 2)
+        )
     x = tf.transpose(x, (0, *range(2, dims + 2), 1))
     ret = tf.transpose(
         tf.cast(

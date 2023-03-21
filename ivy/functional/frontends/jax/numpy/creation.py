@@ -124,7 +124,15 @@ def full(shape, fill_value, dtype=None):
 
 @handle_jax_dtype
 @to_ivy_arrays_and_back
-@with_unsupported_dtypes({"0.3.14 and below": ("float16", "bfloat16", )}, 'jax')
+@with_unsupported_dtypes(
+    {
+        "0.3.14 and below": (
+            "float16",
+            "bfloat16",
+        )
+    },
+    "jax",
+)
 def logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None, axis=0):
     if not endpoint:
         interval = (stop - start) / num

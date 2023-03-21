@@ -291,6 +291,9 @@ class ndarray:
     def view(self):
         return np_frontend.reshape(self._ivy_array, tuple(self.shape))
 
+    def choose(self, choices, /, *, out=None, mode="raise"):
+        return np_frontend.choose(self._ivy_array, choices, out=out, mode=mode)
+
     def __add__(self, value, /):
         return np_frontend.add(self._ivy_array, value)
 
@@ -349,7 +352,7 @@ class ndarray:
             return self._ivy_array != 0
 
         temp = ivy.squeeze(ivy.asarray(self._ivy_array), axis=None)
-        shape = ivy.shape(temp)
+
         if shape:
             raise ValueError(
                 "The truth value of an array with more than one element is ambiguous. "

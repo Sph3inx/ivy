@@ -123,9 +123,7 @@ def test_jax_numpy_diff(
 @handle_frontend_test(
     fn_tree="jax.numpy.ediff1d",
     dtype_and_x=helpers.dtype_and_values(
-        available_dtypes=helpers.get_dtypes("float"),
-        min_num_dims=1,
-        max_num_dims=1
+        available_dtypes=helpers.get_dtypes("float"), min_num_dims=1, max_num_dims=1
     ),
     to_end=helpers.ints(
         min_value=-1,
@@ -2458,4 +2456,3 @@ def test_jax_numpy_subtract(
         x1=x[0],
         x2=x[0],
     )
-

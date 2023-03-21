@@ -81,10 +81,12 @@ class DefaultDevice:
         ivy.set_default_device(self._dev)
         return self
 
-    def __exit__(self,
-                 exc_type: Optional[Type[BaseException]],
-                 exc_val: Optional[Type[BaseException]],
-                 exc_tb: Optional[types.TracebackType]) -> Union[ivy.Device, str]:
+    def __exit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc_val: Optional[Type[BaseException]],
+        exc_tb: Optional[types.TracebackType],
+    ) -> Union[ivy.Device, str]:
         """
         Exit the runtime context related to the specified device.
 

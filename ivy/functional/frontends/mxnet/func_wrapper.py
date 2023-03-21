@@ -19,7 +19,7 @@ def _mxnet_frontend_array_to_ivy(x):
 
 def _native_to_ivy_array(x):
     # TODO: replace `ndarray.NDArray` with `ivy.NativeArray``
-    # and `x.asnumpy()` with `x` once the mxnet tensor class 
+    # and `x.asnumpy()` with `x` once the mxnet tensor class
     # is implemented
     if isinstance(x, ivy.NativeArray):
         return ivy.array(x)
@@ -71,9 +71,7 @@ def outputs_to_frontend_arrays(fn: Callable) -> Callable:
         ret = fn(*args, **kwargs)
 
         # convert all arrays in the return to `frontend.Tensorflow.tensor` instances
-        return ivy.nested_map(
-            ret, _ivy_array_to_mxnet, include_derived={tuple: True}
-        )
+        return ivy.nested_map(ret, _ivy_array_to_mxnet, include_derived={tuple: True})
 
     new_fn.outputs_to_frontend_arrays = True
     return new_fn

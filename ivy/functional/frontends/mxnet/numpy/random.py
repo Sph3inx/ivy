@@ -10,10 +10,5 @@ def randint(low, high=None, size=None, dtype=None, device=None, out=None):
 @to_ivy_arrays_and_back
 def uniform(low=0.0, high=1.0, size=None, dtype=None, device=None, out=None):
     return ivy.random_uniform(
-        low=low, 
-        high=high, 
-        shape=size, 
-        device=device, 
-        dtype=dtype, 
-        out=out
+        low=low, high=high, shape=size, device=device, dtype=dtype, out=out
     )

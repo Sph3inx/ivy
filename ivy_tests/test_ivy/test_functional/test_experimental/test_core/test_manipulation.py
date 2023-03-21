@@ -864,7 +864,7 @@ def test_atleast_3d(
         indices_same_dims=True,
         valid_bounds=False,
     ),
-    mode=st.sampled_from(['clip', 'fill', 'drop']),
+    mode=st.sampled_from(["clip", "fill", "drop"]),
     test_gradients=st.just(False),
 )
 def test_take_along_axis(

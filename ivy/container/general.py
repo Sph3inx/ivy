@@ -390,14 +390,14 @@ class _ContainerWithGeneral(ContainerBase):
         max_norm
             float, the maximum value of the array norm.
         p
-            optional float, the p-value for computing the p-norm. 
+            optional float, the p-value for computing the p-norm.
             Default is 2.
         key_chains
-            The key-chains to apply or not apply the method to. 
+            The key-chains to apply or not apply the method to.
             Default is ``None``.
         to_apply
             If True, the method will be applied to key_chains, otherwise key_chains
-            will be skipped. 
+            will be skipped.
             Default is ``True``.
         prune_unapplied
             Whether to prune key_chains for which the function was not applied.
@@ -463,14 +463,14 @@ class _ContainerWithGeneral(ContainerBase):
         max_norm
             float, the maximum value of the array norm.
         p
-            optional float, the p-value for computing the p-norm. 
+            optional float, the p-value for computing the p-norm.
             Default is 2.
         key_chains
-            The key-chains to apply or not apply the method to. 
+            The key-chains to apply or not apply the method to.
             Default is ``None``.
         to_apply
             If True, the method will be applied to key_chains, otherwise key_chains
-            will be skipped. 
+            will be skipped.
             Default is ``True``.
         prune_unapplied
             Whether to prune key_chains for which the function was not applied.
